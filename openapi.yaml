@@ -1,0 +1,478 @@
+---
+openapi: 3.0.0
+info:
+  title: Category Template API
+  description: An API to handle CRUD operations for user custom category templates
+  version: "1.0"
+servers:
+- url: https://virtserver.swaggerhub.com/XB0129_1/ClassificationAPI/1.0
+  description: SwaggerHub API Auto Mocking
+- url: https://virtserver.swaggerhub.com/xb0129/ClassificationAPI/1.0
+  description: SwaggerHub API Auto Mocking
+- url: https://excel.sonzea.mx/api
+paths:
+  /customCategoryTemplates:
+    get:
+      summary: Retrieve custom category templates
+      description: Get all custom category templates for a user
+      operationId: getCustomCategoryTemplates
+      parameters:
+      - name: userID
+        in: query
+        description: User ID to retrieve custom category templates for
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of custom category templates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomCategoryTemplate'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "404":
+          description: User not found
+      security:
+      - bearerJWT: []
+    post:
+      summary: Create a custom category template
+      description: Add a new custom category template for a user
+      operationId: createCustomCategoryTemplate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomCategoryTemplate'
+        required: true
+      responses:
+        "201":
+          description: Created custom category template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomCategoryTemplate'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+      security:
+      - bearerJWT: []
+  /customCategoryTemplates/{templateID}:
+    get:
+      summary: Retrieve a custom category template
+      description: Get a specific custom category template by ID
+      operationId: getCustomCategoryTemplate
+      parameters:
+      - name: templateID
+        in: path
+        description: Custom category template ID to retrieve
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A custom category template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomCategoryTemplate'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "404":
+          description: Custom category template not found
+      security:
+      - bearerJWT: []
+    put:
+      summary: Update a custom category template
+      description: Update a specific custom category template by ID
+      operationId: updateCustomCategoryTemplate
+      parameters:
+      - name: templateID
+        in: path
+        description: Custom category template ID to update
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomCategoryTemplate'
+        required: true
+      responses:
+        "200":
+          description: Updated custom category template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomCategoryTemplate'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "404":
+          description: Custom category template not found
+      security:
+      - bearerJWT: []
+    delete:
+      summary: Delete a custom category template
+      description: Delete a specific custom category template by ID
+      operationId: deleteCustomCategoryTemplate
+      parameters:
+      - name: templateID
+        in: path
+        description: Custom category template ID to delete
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Custom category template deleted
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "404":
+          description: Custom category template not found
+      security:
+      - bearerJWT: []
+  /userinfo:
+    get:
+      summary: Retrieve user information
+      description: Get user information based on the Userinfo interface
+      operationId: getUserInfo
+      responses:
+        "200":
+          description: A Userinfo object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Userinfo'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "404":
+          description: User not found
+      security:
+      - bearerJWT: []
+  /classify:
+    post:
+      summary: Classify individual records
+      description: Classify each record in the provided list of records using a preset or custom template
+      operationId: classifyRecords
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/classify_body'
+        required: true
+      responses:
+        "200":
+          description: Classified records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "402":
+          description: Payment required
+        "404":
+          description: User or template not found
+      security:
+      - bearerJWT: []
+  /batchClassify:
+    post:
+      summary: Classify records in a batch
+      description: Classify multiple records in a batch using a preset or custom template
+      operationId: batchClassifyRecords
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/batchClassify_body'
+        required: true
+      responses:
+        "200":
+          description: Classified records in a batch
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "402":
+          description: Payment required
+        "404":
+          description: User or template not found
+      security:
+      - bearerJWT: []
+  /presetCategoryTemplates:
+    get:
+      summary: Retrieve preset category templates
+      description: Get all preset category templates available for classification
+      operationId: getPresetCategoryTemplates
+      responses:
+        "200":
+          description: A list of preset category templates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PresetCategoryTemplate'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+      security:
+      - bearerJWT: []
+  /presetCategoryTemplates/{templateID}:
+    get:
+      summary: Retrieve a preset category template by ID
+      description: Get a specific preset category template by its ID
+      operationId: getPresetCategoryTemplateById
+      parameters:
+      - name: templateID
+        in: path
+        description: Preset category template ID to retrieve
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A preset category template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PresetCategoryTemplate'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+        "404":
+          description: Preset category template not found
+      security:
+      - bearerJWT: []
+components:
+  schemas:
+    CustomCategoryTemplate:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCategory'
+    PresetCategoryTemplate:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCategory'
+    SubCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCategory'
+    UserSettings:
+      type: object
+      properties:
+        userID:
+          type: string
+        customCategoryTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserSettings_customCategoryTemplates'
+        language:
+          type: string
+        dateFormat:
+          type: string
+        currencyUnit:
+          type: string
+        displaySettings:
+          type: object
+        quickClassificationOptions:
+          type: array
+          items:
+            type: string
+        dataImportExportFormat:
+          type: string
+        apiCallFrequencyLimit:
+          type: integer
+    Subscription:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        application:
+          type: string
+        billing_cycle_anchor:
+          type: integer
+        created:
+          type: integer
+        current_period_end:
+          type: integer
+        current_period_start:
+          type: integer
+        description:
+          type: string
+        trial_start:
+          type: integer
+        trial_end:
+          type: integer
+        status:
+          type: string
+    Userinfo:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        email:
+          type: string
+        userID:
+          type: string
+        first_name:
+          type: string
+          nullable: true
+        last_name:
+          type: string
+          nullable: true
+        created:
+          type: integer
+          nullable: true
+        display_name:
+          type: string
+          nullable: true
+        usage:
+          type: integer
+        subscription:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subscription'
+        userSettings:
+          $ref: '#/components/schemas/UserSettings'
+    inline_response_400:
+      type: object
+      properties:
+        error:
+          type: string
+    classify_body:
+      type: object
+      properties:
+        templateID:
+          type: string
+          description: The custom template ID to use for classification (optional)
+        records:
+          type: array
+          description: The list of records to classify
+          items:
+            type: string
+    inline_response_200:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        classifiedRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/inline_response_200_classifiedRecords'
+    batchClassify_body:
+      type: object
+      properties:
+        templateID:
+          type: string
+          description: The custom template ID to use for classification (optional)
+        records:
+          type: array
+          description: The list of records to classify
+          items:
+            type: string
+    UserSettings_customCategoryTemplates:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubCategory'
+    inline_response_200_classifiedRecords:
+      type: object
+      properties:
+        record:
+          type: string
+        primaryCategory:
+          type: string
+        secondaryCategory:
+          type: string
+  securitySchemes:
+    bearerJWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
