@@ -39,60 +39,67 @@ paths:
                                     error:
                                         type: string
         get:
-            summary: Retrieve custom category templates
-            description: Get all custom category templates for a user
-            operationId: getCustomCategoryTemplates
-            responses:
-                '200':
-                    description: A list of custom category templates
-                    content:
-                        application/json:
-                            schema:
-                                type: array
-                                items:
-                                    $ref: '#/components/schemas/CustomCategoryTemplate'
-                '400':
-                    description: Bad request
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                properties:
-                                    error:
-                                        type: string
-                '404':
-                    description: User not found
+          summary: Retrieve custom category templates for a user
+          description: Get all custom category templates for a user by user ID
+          operationId: getCustomCategoryTemplatesByUser
+          parameters:
+            - name: templateUserID
+              in: query
+              description: ID of the template owner
+              required: false
+              schema:
+                type: string
+          responses:
+            '200':
+              description: A list of custom category templates
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CustomCategoryTemplate'
+            '400':
+              description: Bad request
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      error:
+                        type: string
+            '404':
+              description: User not found
 
     /customCategoryTemplates/{templateID}:
         get:
-            summary: Retrieve a custom category template
-            description: Get a specific custom category template by ID
-            operationId: getCustomCategoryTemplate
-            parameters:
-                - name: templateID
-                  in: path
-                  description: Custom category template ID to retrieve
-                  required: true
+          summary: Retrieve custom category templates by ID
+          description: Get custom category templates by ID
+          operationId: getCustomCategoryTemplatesById
+          parameters:
+            - name: templateID
+              in: path
+              description: Custom category template ID to retrieve
+              required: true
+              schema:
+                type: string
+          responses:
+            '200':
+              description: Custom category template found
+              content:
+                application/json:
                   schema:
-                      type: string
-            responses:
-                '200':
-                    description: A custom category template
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/CustomCategoryTemplate'
-                '400':
-                    description: Bad request
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                properties:
-                                    error:
-                                        type: string
-                '404':
-                    description: Custom category template not found
+                    $ref: '#/components/schemas/CustomCategoryTemplate'
+            '400':
+              description: Bad request
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      error:
+                        type: string
+            '404':
+              description: Custom category template not found
         put:
             summary: Update a custom category template
             description: Update a specific custom category template by ID
@@ -307,7 +314,7 @@ components:
                     type: string
                 name:
                     type: string
-                owner:
+                userID:
                     type: string
                     description: owner of the category template
                 childrenNode:
