@@ -1,0 +1,265 @@
+{
+    "id": "11111111-1111-1111-1111-111111111111",
+    "name": "Household Expense Categories",
+    "userID": "system",
+    "childrenNode": [
+        {
+            "id": "6b179ad5-21c6-4c19-bba6-db7e1314dc78",
+            "name": "Food and Beverages",
+            "leafNode": [
+                {
+                    "id": "5e0d67e2-0823-480e-bbe9-4e994e65dfda",
+                    "name": "Restaurants and Takeout",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "9cb76842-ca3d-422c-a1c8-d99fdaaff8d2",
+                    "name": "Supermarket Shopping",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "a9e574ed-6a5c-4db3-a35f-fd7d63c458a0",
+                    "name": "Snacks and Drinks",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        },
+        {
+            "id": "dc7000bd-a820-4af4-aff2-2ed91d4d35a0",
+            "name": "Living Expenses",
+            "leafNode": [
+                {
+                    "id": "39b8bc65-d67e-4fd3-a90c-fa8a81b06cda",
+                    "name": "Rent or Mortgage",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "b22aeda6-d4ef-432a-91c3-bf366bc52e60",
+                    "name": "Property Management Fees",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "074cbba6-b94a-4cdb-ab7d-8ec320432c72",
+                    "name": "Utilities (Water, Electricity, Gas)",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "de6de895-03d1-41fc-a3d6-7bd7bfb55a72",
+                    "name": "Internet and Phone Bills",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "27a7ddda-51c9-4ae4-a726-c8ead2683415",
+                    "name": "Maintenance and Renovation",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        },
+        {
+            "id": "cc5829c6-709d-4804-aa81-ef6855afdd14",
+            "name": "Transportation",
+            "leafNode": [
+                {
+                    "id": "0bac6293-c86e-446b-b783-3e451c0b01ff",
+                    "name": "Car Purchase and Maintenance",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "af52c7b4-56c0-4c4e-9876-419f6f9d012a",
+                    "name": "Gasoline and Parking Fees",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "355af9d2-d39b-456d-b0ad-84bdd202b13e",
+                    "name": "Public Transportation (Subway, Bus, Taxi)",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "bfca36a7-09d4-427a-a068-de2b5e8e1adb",
+                    "name": "Long-Distance Transportation (Train, Plane)",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        },
+        {
+            "id": "122a9071-b507-4777-ab29-e5f05097750e",
+            "name": "Clothing and Personal Items",
+            "leafNode": [
+                {
+                    "id": "7c081326-8316-4d7f-821d-6ce267982868",
+                    "name": "Clothing Purchases",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "ed333bf7-b353-4128-b145-b5e6e22d1a6b",
+                    "name": "Shoes and Accessories",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "aa596309-1681-401a-8502-2e8b64f9c4be",
+                    "name": "Skincare and Makeup",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "a6493a69-70b8-487f-9e85-78250e0f02ea",
+                    "name": "Cleaning Supplies",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        },
+        {
+            "id": "d469ed81-6da4-47e5-854d-a5c09dc47970",
+            "name": "Health and Medical",
+            "leafNode": [
+                {
+                    "id": "3297c2ca-194a-4549-a716-a16aaea9a023",
+                    "name": "Insurance Premiums",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "563b9835-ee33-4bd7-97f3-bd93e51c900a",
+                    "name": "Medical Expenses",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "9779e885-16ad-4078-9920-375a0dcbd2ff",
+                    "name": "Fitness and Exercise",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "4e80e1d2-ac61-49d8-be10-985e493d7e3d",
+                    "name": "Medications and Health Products",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        },
+        {
+            "id": "48ff668f-bda1-4fc1-98da-e71868b2c81b",
+            "name": "Education and Training",
+            "leafNode": [
+                {
+                    "id": "133b4480-480e-48b1-a507-bf54e72e0c60",
+                    "name": "Children's Tuition",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "4e02b0ff-d2ba-4a4a-b4b3-dea9618dc968",
+                    "name": "Extracurricular Classes",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "9ed33ca3-a9bb-4267-aea1-2ec01599c853",
+                    "name": "Adult Training and Continuing Education",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        },
+        {
+            "id": "3ae8e701-fb23-47b9-b318-cb2f4ece9c2a",
+            "name": "Entertainment and Socializing",
+            "leafNode": [
+                {
+                    "id": "840e5cca-1057-4025-a0a2-588deb2cd8fe",
+                    "name": "Movies, Performances, and Exhibitions",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "d83986a7-5135-4c98-9772-39f6e2bf4fee",
+                    "name": "Travel and Vacation",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "ee195cf8-3604-4566-9436-dc9972bb6d06",
+                    "name": "Gifts and Celebrations",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "45ba20f1-a8eb-4c8d-97be-336a1649180b",
+                    "name": "Clubs and Social Activities",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        },
+        {
+            "id": "21a7a102-8383-4b39-af5f-a85a70d10179",
+            "name": "Savings and Investments",
+            "leafNode": [
+                {
+                    "id": "7ffd11f0-cec5-4649-a46f-47b8d1c1e857",
+                    "name": "Fixed Deposits",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "ce759e81-5e16-4bd6-a303-a72e0b5d4887",
+                    "name": "Stocks and Fund Investments",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                },
+                {
+                    "id": "26d09ea6-4c6f-4071-b68a-630cdad7b333",
+                    "name": "Bonds and Other Financial Products",
+                    "alias": [],
+                    "feature": "",
+                    "customizeFeature": ""
+                }
+            ]
+        }
+    ],
+}
