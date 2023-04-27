@@ -10,7 +10,7 @@
     "Third-party transfers (Zelle, Paypal, Venmo)",
     "Transfers to checking, savings, retirement accounts and other investment accounts",
   ],
-  Entertainment: [
+  "Entertainment": [
     "Amusement Parks",
     "Casinos and gambling",
     "Music",
@@ -61,13 +61,13 @@
     "Taxes",
   ],
 
-  Loans: [
+  "Loans": [
     "Car loan payments",
     "Credit card payment",
     "Mortgage payments",
     "Personal loans",
   ],
-  Medical: [
+  "Medical": [
     "Pharmacies and supplements",
     "Primary, dental, eye, and nursing care",
     "Veterinary services",
@@ -79,7 +79,7 @@
     "Rent",
     "Water",
   ],
-  Transportation: [
+  "Transportation": [
     "Automobile maintenance and fees",
     "Gas",
     "Parking",
@@ -87,6 +87,6 @@
     "Taxis and ride shares",
     "Tolls",
   ],
-  Travel: ["Flights", "Lodging", "Other", "Rental cars"],
-  Uncategorized: ["Unclassifiable"],
+  "Travel": ["Flights", "Lodging", "Other", "Rental cars"],
+  "Uncategorized": ["Unclassifiable"],
 };
